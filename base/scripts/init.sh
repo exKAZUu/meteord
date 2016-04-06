@@ -1,7 +1,8 @@
 set -e
 
 apt-get install --reinstall tzdata
-ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+cp -f /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+rm -Rf /usr/share/zoneinfo
 date
 bash $METEORD_DIR/lib/install_base.sh
 bash $METEORD_DIR/lib/install_node.sh
