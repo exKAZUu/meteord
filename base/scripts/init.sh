@@ -1,5 +1,6 @@
 set -e
 
+apt-get install graphicsmagick
 apt-get install --reinstall tzdata
 cp -f /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 rm -Rf /usr/share/zoneinfo
