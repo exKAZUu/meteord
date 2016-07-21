@@ -20,10 +20,10 @@ rm -rf /var/lib/apt/lists/*
 
 printf "\n[-] Performing final cleanup...\n"
 
-# Clean out docs
+# clean out docs
 rm -rf /usr/share/{doc,doc-base,man,locale,zoneinfo}
 
-# Clean out package management dirs
+# clean out package management dirs
 rm -rf /var/lib/{cache,log}
 
 # remove meteor
@@ -34,10 +34,8 @@ rm -rf /root/.meteor
 rm -rf /root/{.npm,.cache,.config,.cordova,.local}
 rm -rf /tmp/*
 
-# remove npm
+# clean up npm
 npm cache clean
-rm -rf /opt/nodejs/bin/npm
-rm -rf /opt/nodejs/lib/node_modules/npm/
 
 # remove os dependencies
 apt-get -y purge ca-certificates curl git bzip2
