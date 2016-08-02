@@ -6,12 +6,12 @@ BUNDLE_DIR=/tmp/bundle-dir
 # sometimes, directly copied folder cause some wierd issues
 # this fixes that
 cp -R /app $COPIED_APP_PATH
-cd $COPIED_APP_PATH && meteor npm update && meteor npm rebuild
+cd $COPIED_APP_PATH
 
 meteor build --directory $BUNDLE_DIR --server=http://localhost:3000
 
 cd $BUNDLE_DIR/bundle/programs/server/
-meteor npm install --production
+npm i
 
 mv $BUNDLE_DIR/bundle /built_app
 
