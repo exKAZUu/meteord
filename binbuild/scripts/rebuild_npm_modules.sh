@@ -30,7 +30,7 @@ gyp_rebuild_inside_node_modules () {
       rm -rf node_modules
       if [ -f binding.gyp ]; then
         npm install
-        $(npm bin -g)/node-gyp rebuild || :
+        node-gyp rebuild || :
       else
         npm install
       fi
