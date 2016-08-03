@@ -7,11 +7,12 @@ BUNDLE_DIR=/tmp/bundle-dir
 # this fixes that
 cp -R /app $COPIED_APP_PATH
 cd $COPIED_APP_PATH
+npm install --production --unsafe-perm
 
 meteor build --directory $BUNDLE_DIR --server=http://localhost:3000
 
 cd $BUNDLE_DIR/bundle/programs/server/
-npm i
+npm install --production --unsafe-perm
 
 mv $BUNDLE_DIR/bundle /built_app
 
